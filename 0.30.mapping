@@ -1,0 +1,716 @@
+CLASS a/a math/math
+	FIELD a sinTable [F
+	METHOD a sin (F)F
+		ARG 0 value
+	METHOD b cos (F)F
+		ARG 0 value
+	METHOD c sqrt (F)F
+		ARG 0 value
+CLASS com/mojang/a/a com/mojang/a/ConnectionHandler
+	FIELD a active Z
+	FIELD b socketChannel Ljava/nio/channels/SocketChannel;
+	FIELD c bufferA Ljava/nio/ByteBuffer;
+	FIELD d bufferB Ljava/nio/ByteBuffer;
+	FIELD f socket Ljava/net/Socket;
+	METHOD <init> (Ljava/lang/String;I)V
+		ARG 1 IP
+		ARG 2 port
+	METHOD a dispose ()V
+	METHOD a handlePacket (Lcom/mojang/minecraft/net/a;[Ljava/lang/Object;)V
+CLASS com/mojang/minecraft/Entity
+	METHOD setPos setPosition (FFF)V
+	METHOD setRot setRotation (FF)V
+CLASS com/mojang/minecraft/a com/mojang/minecraft/BlockRegistry
+	FIELD a blockList Ljava/util/List;
+	FIELD b blockName Ljava/lang/String;
+	FIELD c blockType Ljava/lang/String;
+	METHOD <init> (Ljava/lang/String;Ljava/lang/String;)V
+		ARG 1 blockName
+		ARG 2 blockType
+CLASS com/mojang/minecraft/a/a com/mojang/minecraft/models/SheepModel
+CLASS com/mojang/minecraft/a/b com/mojang/minecraft/models/Model
+CLASS com/mojang/minecraft/a/c com/mojang/minecraft/a/Vector
+	FIELD a x F
+	FIELD b y F
+	FIELD c z F
+	METHOD <init> (FFF)V
+		ARG 1 x
+		ARG 2 y
+		ARG 3 z
+	METHOD a normalize ()Lcom/mojang/minecraft/a/c;
+	METHOD a add (FFF)Lcom/mojang/minecraft/a/c;
+		ARG 1 xOffset
+		ARG 2 yOffset
+		ARG 3 zOffset
+	METHOD a subtract (Lcom/mojang/minecraft/a/c;)Lcom/mojang/minecraft/a/c;
+		ARG 1 vec
+	METHOD a intersectLineWithPlaneAtX (Lcom/mojang/minecraft/a/c;F)Lcom/mojang/minecraft/a/c;
+		ARG 1 endPoint
+		ARG 2 xPlane
+	METHOD b squaredDistanceTo (Lcom/mojang/minecraft/a/c;)F
+		ARG 1 vec
+	METHOD b intersectLineWithPlaneAtY (Lcom/mojang/minecraft/a/c;F)Lcom/mojang/minecraft/a/c;
+		ARG 1 endPoint
+		ARG 2 yPlane
+	METHOD c distanceTo (Lcom/mojang/minecraft/a/c;)F
+		ARG 1 vec
+	METHOD c intersectLineWithPlaneAtZ (Lcom/mojang/minecraft/a/c;F)Lcom/mojang/minecraft/a/c;
+		ARG 1 endPoint
+		ARG 2 zPlane
+CLASS com/mojang/minecraft/a/d com/mojang/minecraft/a/SheepFur
+CLASS com/mojang/minecraft/a/e com/mojang/minecraft/models/CreeperModel
+CLASS com/mojang/minecraft/a/f com/mojang/minecraft/models/ZombieModel
+CLASS com/mojang/minecraft/a/g com/mojang/minecraft/models/ModelManager
+	FIELD a humanoid Lcom/mojang/minecraft/a/k;
+	FIELD b humanoidArmor Lcom/mojang/minecraft/a/k;
+	FIELD c creeper Lcom/mojang/minecraft/a/e;
+	FIELD d skeleton Lcom/mojang/minecraft/a/h;
+	FIELD e zombie Lcom/mojang/minecraft/a/f;
+	FIELD f pig Lcom/mojang/minecraft/a/o;
+	FIELD g sheep Lcom/mojang/minecraft/a/o;
+	FIELD h spider Lcom/mojang/minecraft/a/m;
+	FIELD i sheepFur Lcom/mojang/minecraft/a/d;
+	METHOD a getModel (Ljava/lang/String;)Lcom/mojang/minecraft/a/b;
+		ARG 1 modelName
+CLASS com/mojang/minecraft/a/h com/mojang/minecraft/models/SkeletonModel
+CLASS com/mojang/minecraft/a/i com/mojang/minecraft/a/Face
+CLASS com/mojang/minecraft/a/j com/mojang/minecraft/models/PigModel
+CLASS com/mojang/minecraft/a/k com/mojang/minecraft/models/HumanoidModel
+CLASS com/mojang/minecraft/a/l com/mojang/minecraft/a/Vertex
+	FIELD a position Lcom/mojang/minecraft/a/c;
+	FIELD b textureCoordX F
+	FIELD c textureCoordY F
+	METHOD <init> (FFFFF)V
+		ARG 1 x
+		ARG 2 y
+		ARG 3 z
+		ARG 4 newX
+		ARG 5 newY
+	METHOD <init> (Lcom/mojang/minecraft/a/c;FF)V
+		ARG 1 vec
+		ARG 2 x
+		ARG 3 y
+	METHOD <init> (Lcom/mojang/minecraft/a/l;FF)V
+		ARG 1 vertex
+		ARG 2 x
+		ARG 3 y
+	METHOD a createVertexWithNewTextureCoords (FF)Lcom/mojang/minecraft/a/l;
+		ARG 1 x
+		ARG 2 y
+CLASS com/mojang/minecraft/a/m com/mojang/minecraft/models/SpiderModel
+CLASS com/mojang/minecraft/a/n com/mojang/minecraft/a/ModelPart
+	FIELD a vertices [Lcom/mojang/minecraft/a/l;
+	FIELD b faces [Lcom/mojang/minecraft/a/i;
+	FIELD c translationX F
+	FIELD d translationY F
+	FIELD e translationZ F
+	FIELD f rotationX F
+	FIELD g rotationY F
+	FIELD h rotationZ F
+	FIELD i isTextureUpdated Z
+	FIELD j displayListId I
+	FIELD k isTransformable Z
+	FIELD l isVisible Z
+	FIELD m textureWidth I
+	FIELD n textureHeight I
+	FIELD o isFlipped Z
+	METHOD <init> (II)V
+		ARG 1 width
+		ARG 2 height
+	METHOD a render (F)V
+		ARG 1 scale
+	METHOD a setTranslation (FFF)V
+		ARG 1 x
+		ARG 2 y
+		ARG 3 z
+	METHOD a createVerticesAndFaces (FFFIIIF)V
+		ARG 1 x
+		ARG 2 y
+		ARG 3 z
+		ARG 4 width
+		ARG 5 height
+		ARG 6 depth
+		ARG 7 padding
+	METHOD b updateDisplayList (F)V
+		ARG 1 scale
+CLASS com/mojang/minecraft/a/o com/mojang/minecraft/a/AnimalModel
+CLASS com/mojang/minecraft/b com/mojang/minecraft/Text
+	FIELD a string Ljava/lang/String;
+	FIELD b number I
+CLASS com/mojang/minecraft/b/a com/mojang/minecraft/b/TextureManager
+	FIELD a textureIDMap Ljava/util/HashMap;
+	FIELD b textureCache Ljava/util/HashMap;
+	FIELD c textureBuffer Ljava/nio/IntBuffer;
+	FIELD d imageBuffer Ljava/nio/ByteBuffer;
+	FIELD e callbacks Ljava/util/List;
+	FIELD f options Lcom/mojang/minecraft/k;
+	METHOD <init> (Lcom/mojang/minecraft/k;)V
+		ARG 1 options
+	METHOD a addCallback (Lcom/mojang/minecraft/b/a/c;)V
+		ARG 1 callback
+	METHOD a convertToStripedImage (Ljava/awt/image/BufferedImage;)Ljava/awt/image/BufferedImage;
+	METHOD a uploadTextureData (Ljava/awt/image/BufferedImage;I)V
+		ARG 2 textureID
+	METHOD a getTextureID (Ljava/lang/String;)I
+		ARG 1 texturePath
+	METHOD b createTexture (Ljava/awt/image/BufferedImage;)I
+CLASS com/mojang/minecraft/b/a/a com/mojang/minecraft/b/a/CrackedStoneBrickCallback
+CLASS com/mojang/minecraft/b/a/b com/mojang/minecraft/b/a/StoneBrickCallback
+CLASS com/mojang/minecraft/b/a/c com/mojang/minecraft/b/a/Callback
+	FIELD a dataBuffer [B
+	FIELD b identifier I
+	FIELD c isActive Z
+	METHOD <init> (I)V
+		ARG 1 identifier
+	METHOD a execute ()V
+CLASS com/mojang/minecraft/b/c com/mojang/minecraft/b/VertexDataHandler
+	FIELD a instance Lcom/mojang/minecraft/b/c;
+	FIELD b vertexBuffer Ljava/nio/FloatBuffer;
+	FIELD c vertexArray [F
+	FIELD d vertexCount I
+	FIELD e vertexCoordinateX F
+	FIELD f vertexCoordinateY F
+	FIELD g colorRed F
+	FIELD h colorGreen F
+	FIELD i colorBlue F
+	FIELD j hasColor Z
+	FIELD k hasTexture Z
+	FIELD l stride I
+	FIELD m arrayIndex I
+	FIELD n colorUpdateFlag Z
+	METHOD a render ()V
+	METHOD a setColor (FFF)V
+		ARG 1 red
+		ARG 2 green
+		ARG 3 blue
+	METHOD a setTexture (FFFFF)V
+		ARG 1 u
+		ARG 2 v
+		ARG 3 s
+		ARG 4 x
+		ARG 5 y
+	METHOD a updateColor (I)V
+		ARG 1 colorValue
+	METHOD b resetState ()V
+	METHOD b addVertex (FFF)V
+		ARG 1 x
+		ARG 2 y
+		ARG 3 z
+	METHOD c setColorUpdateFlag ()V
+	METHOD c setNormal (FFF)V
+		ARG 1 nx
+		ARG 2 ny
+		ARG 3 nz
+	METHOD d reset ()V
+CLASS com/mojang/minecraft/b/d com/mojang/minecraft/b/MiscRenderer
+	FIELD a renderContext Lcom/mojang/minecraft/l;
+	METHOD <init> (Lcom/mojang/minecraft/l;)V
+		ARG 1 renderContext
+CLASS com/mojang/minecraft/b/f com/mojang/minecraft/b/PlayerComparator
+	FIELD a player Lcom/mojang/minecraft/player/Player;
+	METHOD <init> (Lcom/mojang/minecraft/player/Player;)V
+		ARG 1 player
+CLASS com/mojang/minecraft/b/h com/mojang/minecraft/b/BlockInteraction
+	FIELD a renderContext Lcom/mojang/minecraft/l;
+	FIELD c interactionProgress F
+	FIELD d prevInteractionProgress F
+	FIELD e interactionTicks I
+	FIELD f isInteracting Z
+	METHOD <init> (Lcom/mojang/minecraft/l;)V
+		ARG 1 renderContext
+CLASS com/mojang/minecraft/b/i com/mojang/minecraft/b/BoundingBoxClip
+	METHOD a TestClip (FFFFFF)Z
+		ARG 1 x0
+		ARG 2 y0
+		ARG 3 z0
+		ARG 4 x1
+		ARG 5 y1
+		ARG 6 z1
+CLASS com/mojang/minecraft/b/j
+	FIELD d level Lcom/mojang/minecraft/level/Level;
+CLASS com/mojang/minecraft/c com/mojang/minecraft/ResourceDownloaderThread
+CLASS com/mojang/minecraft/c/i
+	FIELD c options Lcom/mojang/minecraft/k;
+	METHOD <init> (Lcom/mojang/minecraft/k;)V
+		ARG 1 options
+CLASS com/mojang/minecraft/d com/mojang/minecraft/TimingManager
+	FIELD a timeFactor F
+	FIELD b timeElapsed D
+	FIELD c counter I
+	FIELD d elapsedTime F
+	FIELD e multiplier F
+	FIELD f someValue F
+	FIELD g currentTimeMillis J
+	FIELD h nanoTimeMillis J
+	FIELD i precisionTime D
+	METHOD <init> (F)V
+		ARG 1 timeFactor
+CLASS com/mojang/minecraft/d/a com/mojang/minecraft/d/InventoryRenderer
+CLASS com/mojang/minecraft/d/b com/mojang/minecraft/d/GameMode
+	FIELD a renderContext Lcom/mojang/minecraft/l;
+	METHOD <init> (Lcom/mojang/minecraft/l;)V
+		ARG 1 renderContext
+	METHOD a breakBlock (III)V
+		ARG 1 x
+		ARG 2 y
+		ARG 3 z
+	METHOD a initLevel (Lcom/mojang/minecraft/level/Level;)V
+		ARG 1 level
+	METHOD b (III)V
+		ARG 1 x
+		ARG 2 y
+		ARG 3 z
+CLASS com/mojang/minecraft/e com/mojang/minecraft/TestThread
+CLASS com/mojang/minecraft/e/a com/mojang/minecraft/e/LevelGUIThing
+	FIELD h prompt Ljava/lang/String;
+CLASS com/mojang/minecraft/e/e com/mojang/minecraft/e/Button
+	FIELD a width I
+	FIELD b height I
+	FIELD c x I
+	FIELD d y I
+	FIELD e text Ljava/lang/String;
+	FIELD f bgColor I
+	FIELD g enabled Z
+	FIELD h visible Z
+	METHOD <init> (IIIIILjava/lang/String;)V
+		ARG 1 color
+		ARG 2 x
+		ARG 3 y
+		ARG 4 width
+		ARG 5 height
+		ARG 6 text
+	METHOD <init> (IIILjava/lang/String;)V
+		ARG 1 x
+		ARG 2 y
+		ARG 3 color
+		ARG 4 text
+CLASS com/mojang/minecraft/e/h com/mojang/minecraft/e/GUI
+	METHOD a drawRectangle (IIIII)V
+		ARG 0 x1
+		ARG 1 y1
+		ARG 2 x2
+		ARG 3 y2
+		ARG 4 color
+	METHOD a drawRectangleWithBG (IIIIII)V
+		ARG 0 x1
+		ARG 1 y1
+		ARG 2 x2
+		ARG 3 y2
+		ARG 4 color
+		ARG 5 color2
+	METHOD a renderTextCenter (Lcom/mojang/minecraft/e/l;Ljava/lang/String;III)V
+		ARG 0 textRenderer
+		ARG 1 text
+		ARG 2 x
+		ARG 3 y
+		ARG 4 color
+	METHOD b renderSomething (IIIIII)V
+	METHOD b renderText (Lcom/mojang/minecraft/e/l;Ljava/lang/String;III)V
+		ARG 0 textRenderer
+		ARG 1 text
+		ARG 2 x
+		ARG 3 y
+		ARG 4 color
+CLASS com/mojang/minecraft/e/l com/mojang/minecraft/e/TextRenderer
+	FIELD a fontCharWidths [I
+	FIELD b textureId I
+	FIELD c options Lcom/mojang/minecraft/k;
+	METHOD <init> (Lcom/mojang/minecraft/k;Ljava/lang/String;Lcom/mojang/minecraft/b/a;)V
+		ARG 1 options
+		ARG 2 texturePath
+		ARG 3 textureManager
+	METHOD a getTextWidth (Ljava/lang/String;)I
+		ARG 1 text
+	METHOD a renderTextWithShadow (Ljava/lang/String;III)V
+		ARG 1 text
+		ARG 2 x
+		ARG 3 y
+		ARG 4 color
+	METHOD a renderText (Ljava/lang/String;IIIZ)V
+		ARG 1 text
+		ARG 2 x
+		ARG 3 y
+		ARG 4 color
+		ARG 5 shadow
+	METHOD b stripFormattingCodes (Ljava/lang/String;)Ljava/lang/String;
+		ARG 0 text
+	METHOD b renderText (Ljava/lang/String;III)V
+		ARG 1 text
+		ARG 2 x
+		ARG 3 y
+		ARG 4 color
+CLASS com/mojang/minecraft/e/m
+	METHOD <init> (Lcom/mojang/minecraft/l;II)V
+		ARG 1 renderContext
+CLASS com/mojang/minecraft/e/o com/mojang/minecraft/e/CustomGUI
+	FIELD a renderContext Lcom/mojang/minecraft/l;
+	FIELD d buttons Ljava/util/List;
+	FIELD f textRenderer Lcom/mojang/minecraft/e/l;
+	METHOD a customInitialize ()V
+	METHOD a handleCharacterInput (CI)V
+	METHOD a renderButtons (II)V
+		ARG 1 x
+		ARG 2 y
+	METHOD a handleMouseClick (III)V
+	METHOD a performButtonAction (Lcom/mojang/minecraft/e/e;)V
+	METHOD a initGUI (Lcom/mojang/minecraft/l;II)V
+		ARG 1 renderContext
+	METHOD d processInputEvents ()V
+	METHOD e processMouseEvents ()V
+	METHOD f processKeyboardEvents ()V
+CLASS com/mojang/minecraft/e/p com/mojang/minecraft/e/LevelFilePickerThread
+CLASS com/mojang/minecraft/e/q com/mojang/minecraft/e/LevelLoaderGUI
+	FIELD g gui Lcom/mojang/minecraft/e/o;
+	METHOD <init> (Lcom/mojang/minecraft/e/o;)V
+		ARG 1 customGUI
+CLASS com/mojang/minecraft/g com/mojang/minecraft/GameEvent
+	FIELD a eventType I
+	FIELD b eventX I
+	FIELD c y I
+	FIELD d z I
+	FIELD e face I
+	FIELD f vector Lcom/mojang/minecraft/a/c;
+	FIELD g entity Lcom/mojang/minecraft/Entity;
+	METHOD <init> (IIIILcom/mojang/minecraft/a/c;)V
+		ARG 1 x
+		ARG 2 y
+		ARG 3 z
+		ARG 4 face
+		ARG 5 vec
+CLASS com/mojang/minecraft/h com/mojang/minecraft/SkinSetterThread
+	FIELD a rendererContext Lcom/mojang/minecraft/l;
+	METHOD <init> (Lcom/mojang/minecraft/l;)V
+		ARG 1 rendererContext
+CLASS com/mojang/minecraft/i com/mojang/minecraft/GameRenderer
+	FIELD a currentMsg Ljava/lang/String;
+	FIELD b rendererContext Lcom/mojang/minecraft/l;
+	FIELD c currentMsg_also Ljava/lang/String;
+	FIELD d time J
+	METHOD a render (I)V
+	METHOD a setStatus (Ljava/lang/String;)V
+		ARG 1 statusMsg
+	METHOD b setStatus2 (Ljava/lang/String;)V
+		ARG 1 statusMsg
+CLASS com/mojang/minecraft/item/a com/mojang/minecraft/item/ItemModel
+CLASS com/mojang/minecraft/j com/mojang/minecraft/KeybindOption
+	FIELD a keyString Ljava/lang/String;
+	FIELD b key I
+	METHOD <init> (Ljava/lang/String;I)V
+		ARG 1 keyString
+		ARG 2 key
+CLASS com/mojang/minecraft/k com/mojang/minecraft/OptionsManager
+	FIELD a musicEnabled Z
+	FIELD b soundEnabled Z
+	FIELD i forwardKeybind Lcom/mojang/minecraft/j;
+	FIELD j leftKeybind Lcom/mojang/minecraft/j;
+	FIELD k backKeybind Lcom/mojang/minecraft/j;
+	FIELD l rightKeybind Lcom/mojang/minecraft/j;
+	FIELD m jumpKeybind Lcom/mojang/minecraft/j;
+	FIELD n buildKeybind Lcom/mojang/minecraft/j;
+	FIELD o chatKeybind Lcom/mojang/minecraft/j;
+	FIELD p toggleFogKeybind Lcom/mojang/minecraft/j;
+	FIELD q saveLocationKeybind Lcom/mojang/minecraft/j;
+	FIELD r loadLocationKeybind Lcom/mojang/minecraft/j;
+	FIELD s keybindOptions [Lcom/mojang/minecraft/j;
+	FIELD w optionsFile Ljava/io/File;
+	METHOD <init> (Lcom/mojang/minecraft/l;Ljava/io/File;)V
+		ARG 2 optionsFile
+CLASS com/mojang/minecraft/l com/mojang/minecraft/RendererContext
+	FIELD B optionsManager Lcom/mojang/minecraft/k;
+	FIELD L resourceDownloader Lcom/mojang/minecraft/c;
+	FIELD O minecraftApplet Lcom/mojang/minecraft/MinecraftApplet;
+	FIELD d level Lcom/mojang/minecraft/level/Level;
+	FIELD f player Lcom/mojang/minecraft/player/Player;
+	FIELD g particleEngine Lcom/mojang/minecraft/particle/a;
+	FIELD h blockRegistry Lcom/mojang/minecraft/a;
+	FIELD m textureManager Lcom/mojang/minecraft/b/a;
+	FIELD n textRenderer Lcom/mojang/minecraft/e/l;
+	FIELD r levelManager Lcom/mojang/minecraft/level/a;
+	METHOD a CheckForGLErrorIn (Ljava/lang/String;)V
+		ARG 0 msg
+CLASS com/mojang/minecraft/level/Level
+	FIELD b size [I
+	FIELD networkMode isMultiplayer Z
+	FIELD particleEngine$13e306ae particleEngine Lcom/mojang/minecraft/particle/a;
+	FIELD rendererContext$5cd64a7f rendererContext Lcom/mojang/minecraft/l;
+	FIELD rotSpawn spawnRotation F
+	METHOD addListener$74652038 addListener (Lcom/mojang/minecraft/b/g;)V
+	METHOD removeListener$74652038 removeListener (Lcom/mojang/minecraft/b/g;)V
+	METHOD setData (III[B)V
+		ARG 1 width
+		ARG 2 depth
+		ARG 3 height
+		ARG 4 blocks
+CLASS com/mojang/minecraft/level/a com/mojang/minecraft/level/LevelManager
+	FIELD a gameRenderer Lcom/mojang/minecraft/i;
+	METHOD <init> (Lcom/mojang/minecraft/i;)V
+		ARG 1 gameRenderer
+	METHOD a saveLevel (Lcom/mojang/minecraft/level/Level;Ljava/io/File;)Z
+	METHOD a writeLevelToStream (Lcom/mojang/minecraft/level/Level;Ljava/io/OutputStream;)V
+	METHOD a uploadLevel (Lcom/mojang/minecraft/level/Level;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)Z
+		ARG 2 serverAddress
+		ARG 3 userName
+		ARG 4 levelName
+		ARG 5 additionalInfo
+		ARG 6 levelId
+	METHOD a loadLevel (Ljava/io/File;)Lcom/mojang/minecraft/level/Level;
+	METHOD a downloadLevel (Ljava/lang/String;Ljava/lang/String;I)Lcom/mojang/minecraft/level/Level;
+		ARG 1 levelAddress
+		ARG 2 user
+		ARG 3 levelId
+	METHOD b readByteArrayFromStream (Ljava/io/InputStream;)[B
+CLASS com/mojang/minecraft/level/b com/mojang/minecraft/level/EntityPlacer
+	FIELD a level Lcom/mojang/minecraft/level/Level;
+	METHOD a (ILcom/mojang/minecraft/Entity;Lcom/mojang/minecraft/i;)I
+		ARG 3 gameRenderer
+CLASS com/mojang/minecraft/level/tile/a com/mojang/minecraft/level/tile/Block
+	FIELD A redstoneBlock Lcom/mojang/minecraft/level/tile/a;
+	FIELD B clayBlock Lcom/mojang/minecraft/level/tile/a;
+	FIELD C brickBlock Lcom/mojang/minecraft/level/tile/a;
+	FIELD D netherBrickBlock Lcom/mojang/minecraft/level/tile/a;
+	FIELD E quartzBlock Lcom/mojang/minecraft/level/tile/a;
+	FIELD F redNetherBrickBlock Lcom/mojang/minecraft/level/tile/a;
+	FIELD G endStoneBlock Lcom/mojang/minecraft/level/tile/a;
+	FIELD H purpurBlock Lcom/mojang/minecraft/level/tile/a;
+	FIELD I beetrootBlock Lcom/mojang/minecraft/level/tile/a;
+	FIELD J glowstoneBlock Lcom/mojang/minecraft/level/tile/a;
+	FIELD K seaLanternBlock Lcom/mojang/minecraft/level/tile/a;
+	FIELD L hayBlockMore Lcom/mojang/minecraft/level/tile/a;
+	FIELD M hayBlock Lcom/mojang/minecraft/level/tile/a;
+	FIELD N hayBlockMoreMore Lcom/mojang/minecraft/level/tile/a;
+	FIELD O redstoneLampBlock Lcom/mojang/minecraft/level/tile/a;
+	FIELD P litRedstoneLampBlock Lcom/mojang/minecraft/level/tile/a;
+	FIELD Q woodenSlabBlock Lcom/mojang/minecraft/level/tile/a;
+	FIELD ab ID I
+	FIELD ac blockID I
+	FIELD ad soundType Lcom/mojang/minecraft/level/tile/Tile$SoundType;
+	FIELD ae minX F
+	FIELD af minY F
+	FIELD ag minZ F
+	FIELD ah maxX F
+	FIELD ai maxY F
+	FIELD aj maxZ F
+	FIELD ak lightLevel F
+	FIELD al al [Z
+	FIELD am hasCollision [Z
+	FIELD an blockTextures [I
+	FIELD ao hardness I
+	FIELD ap isSolid Z
+	FIELD b blocks [Lcom/mojang/minecraft/level/tile/a;
+	FIELD c isOpaque [Z
+	FIELD d isTransparent [Z
+	FIELD e defaultBlock Lcom/mojang/minecraft/level/tile/a;
+	FIELD f grassBlcok Lcom/mojang/minecraft/level/tile/a;
+	FIELD g dirtBlock Lcom/mojang/minecraft/level/tile/a;
+	FIELD h stoneBlock Lcom/mojang/minecraft/level/tile/a;
+	FIELD i woodBlock Lcom/mojang/minecraft/level/tile/a;
+	FIELD j glassBlock Lcom/mojang/minecraft/level/tile/a;
+	FIELD k sandBlock Lcom/mojang/minecraft/level/tile/a;
+	FIELD l stoneBrickBlock Lcom/mojang/minecraft/level/tile/a;
+	FIELD m mossyStoneBrickBlock Lcom/mojang/minecraft/level/tile/a;
+	FIELD n crackedStoneBrickBlock Lcom/mojang/minecraft/level/tile/a;
+	FIELD o chiseledStoneBrickBlock Lcom/mojang/minecraft/level/tile/a;
+	FIELD p gravelBlock Lcom/mojang/minecraft/level/tile/a;
+	FIELD q sandstoneBlock Lcom/mojang/minecraft/level/tile/a;
+	FIELD r lapisBlock Lcom/mojang/minecraft/level/tile/a;
+	FIELD s emeraldBlock Lcom/mojang/minecraft/level/tile/a;
+	FIELD t diamondBlock Lcom/mojang/minecraft/level/tile/a;
+	FIELD u logBlock Lcom/mojang/minecraft/level/tile/a;
+	FIELD v leavesBlock Lcom/mojang/minecraft/level/tile/a;
+	FIELD w woolBlock Lcom/mojang/minecraft/level/tile/a;
+	FIELD x ironBlock Lcom/mojang/minecraft/level/tile/a;
+	FIELD y goldBlock Lcom/mojang/minecraft/level/tile/a;
+	FIELD z lapisLazuliBlock Lcom/mojang/minecraft/level/tile/a;
+	METHOD <init> (I)V
+		ARG 1 id
+	METHOD a isSolid ()Z
+	METHOD a setDimensions (FFFFFF)V
+		ARG 1 minX
+		ARG 2 minY
+		ARG 3 minZ
+		ARG 4 maxX
+		ARG 5 maxY
+		ARG 6 maxZ
+	METHOD a getBoundingBox (III)Lcom/mojang/minecraft/phys/AABB;
+		ARG 1 x
+		ARG 2 y
+		ARG 3 z
+	METHOD a (IIILcom/mojang/minecraft/a/c;Lcom/mojang/minecraft/a/c;)Lcom/mojang/minecraft/g;
+		ARG 1 x
+		ARG 2 y
+		ARG 3 z
+	METHOD a checkBoundsY (Lcom/mojang/minecraft/a/c;)Z
+		ARG 1 vec
+	METHOD a applyTransparency (Lcom/mojang/minecraft/b/c;)V
+		ARG 1 vertexDataHandler
+	METHOD a renderFace (Lcom/mojang/minecraft/b/c;IIII)V
+		ARG 1 vertexDataHandler
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
+		ARG 5 face
+	METHOD a renderFaceWithTexture (Lcom/mojang/minecraft/b/c;IIIII)V
+		ARG 1 vertexDataHandler
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
+		ARG 5 face
+		ARG 6 color
+	METHOD a getBrightness (Lcom/mojang/minecraft/level/Level;III)F
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
+	METHOD a handleBreakBlock (Lcom/mojang/minecraft/level/Level;IIIF)V
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
+		ARG 5 hard
+	METHOD a canPlaceAt (Lcom/mojang/minecraft/level/Level;IIII)Z
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
+		ARG 5 face
+	METHOD a spawnParticleAtFace (Lcom/mojang/minecraft/level/Level;IIIILcom/mojang/minecraft/particle/a;)V
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
+		ARG 5 face
+		ARG 6 particleEngine
+	METHOD a (Lcom/mojang/minecraft/level/Level;IIILcom/mojang/minecraft/b/c;)Z
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
+	METHOD a spawnParticles (Lcom/mojang/minecraft/level/Level;IIILcom/mojang/minecraft/particle/a;)V
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
+		ARG 5 particleEngine
+	METHOD a onBlockUpdate (Lcom/mojang/minecraft/level/Level;IIILjava/util/Random;)V
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
+	METHOD a setProperties (Lcom/mojang/minecraft/level/tile/Tile$SoundType;FFF)Lcom/mojang/minecraft/level/tile/a;
+		ARG 2 resistence
+		ARG 3 lightLevel
+		ARG 4 hardness
+	METHOD a setOpaque (Z)V
+		ARG 1 opaque
+	METHOD b isFullBlock ()Z
+	METHOD b getTextureID (I)I
+		ARG 1 face
+	METHOD b getCollisionBox (III)Lcom/mojang/minecraft/phys/AABB;
+		ARG 1 x
+		ARG 2 y
+		ARG 3 z
+	METHOD b checkBoundsX (Lcom/mojang/minecraft/a/c;)Z
+		ARG 1 vec
+	METHOD b renderBlockVortexData (Lcom/mojang/minecraft/b/c;)V
+		ARG 1 vertexDataHandler
+	METHOD b applyTextureToFace (Lcom/mojang/minecraft/b/c;IIII)V
+		ARG 1 vertexDataHandler
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
+		ARG 5 face
+	METHOD b onBlockPlace (Lcom/mojang/minecraft/level/Level;III)V
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
+	METHOD b onBlockBreak (Lcom/mojang/minecraft/level/Level;IIII)V
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
+		ARG 5 face
+	METHOD c isCollidable ()Z
+	METHOD c checkBoundsXandY (Lcom/mojang/minecraft/a/c;)Z
+		ARG 1 vec
+	METHOD e getDropCount ()I
+	METHOD e breakBlock (Lcom/mojang/minecraft/level/Level;III)V
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
+	METHOD f getHardness ()I
+	METHOD f (Lcom/mojang/minecraft/level/Level;III)V
+		ARG 2 x
+	METHOD g getBlockId ()I
+	METHOD h getHardnessLevel ()I
+	METHOD i getIsSolid ()Z
+CLASS com/mojang/minecraft/mob/HumanoidMob
+	FIELD armor isWearingArmor Z
+	FIELD helmet isWearingHelmet Z
+	METHOD <init> (Lcom/mojang/minecraft/level/Level;FFF)V
+		ARG 1 level
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
+CLASS com/mojang/minecraft/mob/Mob
+	METHOD bindTexture$4211e026 bindTexture (Lcom/mojang/minecraft/b/a;)V
+	METHOD renderModel$f1c6c5a renderModel (Lcom/mojang/minecraft/b/a;FFFFFF)V
+		ARG 1 textureManager
+CLASS com/mojang/minecraft/net/NetworkPlayer
+	FIELD minecraft renderContext Lcom/mojang/minecraft/l;
+	FIELD textures$7a7c7041 textureManager Lcom/mojang/minecraft/b/a;
+	METHOD <init> (Lcom/mojang/minecraft/l;ILjava/lang/String;IIIFF)V
+		ARG 1 renderContext
+CLASS com/mojang/minecraft/net/a com/mojang/minecraft/net/Packet
+CLASS com/mojang/minecraft/net/c com/mojang/minecraft/net/NetworkClient
+	FIELD b handler Lcom/mojang/a/a;
+	FIELD c rendererContext Lcom/mojang/minecraft/l;
+	FIELD d isConnected Z
+	FIELD e isInitialized Z
+	FIELD f players Ljava/util/HashMap;
+	METHOD <init> (Lcom/mojang/minecraft/l;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;)V
+		ARG 1 rendererContext
+		ARG 2 IP
+		ARG 3 port
+	METHOD a ()Z
+		ARG 1 handler
+	METHOD b getPlayers ()Ljava/util/List;
+CLASS com/mojang/minecraft/net/d com/mojang/minecraft/net/SkinUpdater
+	FIELD a networkPlayer Lcom/mojang/minecraft/net/NetworkPlayer;
+CLASS com/mojang/minecraft/net/e com/mojang/minecraft/net/NetworkClientThread
+	FIELD a IP Ljava/lang/String;
+	FIELD b port I
+	FIELD f client Lcom/mojang/minecraft/net/c;
+	METHOD <init> (Lcom/mojang/minecraft/net/c;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Lcom/mojang/minecraft/l;)V
+		ARG 1 client
+		ARG 2 IP
+		ARG 3 port
+		ARG 6 rendererContext
+CLASS com/mojang/minecraft/particle/Particle
+	METHOD <init> (Lcom/mojang/minecraft/level/Level;FFFFFF)V
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
+	METHOD render$12562f50 render (Lcom/mojang/minecraft/b/c;FFFFFF)V
+CLASS com/mojang/minecraft/particle/a com/mojang/minecraft/particle/ParticleEngine
+CLASS com/mojang/minecraft/phys/AABB
+	METHOD <init> (FFFFFF)V
+		ARG 1 x0
+		ARG 2 y0
+		ARG 3 z0
+		ARG 4 x1
+		ARG 5 y1
+		ARG 6 z1
+	METHOD expand (FFF)Lcom/mojang/minecraft/phys/AABB;
+		ARG 1 x
+		ARG 2 y
+		ARG 3 z
+	METHOD grow (FFF)Lcom/mojang/minecraft/phys/AABB;
+		ARG 1 x
+		ARG 2 y
+		ARG 3 z
+CLASS com/mojang/minecraft/player/a com/mojang/minecraft/player/Movement
+	FIELD a xMovement F
+	FIELD b yMovement F
+	FIELD c isJumping Z
+	METHOD a updateMovement ()V
+	METHOD a updateKeyState (IZ)V
+		ARG 1 keyCode
+		ARG 2 isPressed
+	METHOD b resetKeyState ()V
+CLASS com/mojang/minecraft/player/b com/mojang/minecraft/player/PlayerMovement
+	FIELD d keyStates [Z
+	FIELD e optionsManager Lcom/mojang/minecraft/k;
+	METHOD <init> (Lcom/mojang/minecraft/k;)V
+		ARG 1 manager
